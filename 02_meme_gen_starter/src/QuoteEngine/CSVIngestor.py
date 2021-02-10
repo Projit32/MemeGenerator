@@ -20,7 +20,7 @@ class CSVIngestor(IngestorInterface):
             csv = pandas.read_csv(path, header=0)
             for index, rows in csv.iterrows():
                 new_quote = QuoteModel(rows['body'], rows['author'])
-                quotes.appened(new_quote)
+                quotes.append(new_quote)
         except Exception as e:
             raise Exception("CSV parsing issue occured.")
         return quotes
